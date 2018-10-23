@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-success</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-success" sketch:type="MSArtboardGroup" fill="#69AE39">
+            <g id="Fill-2233" sketch:type="MSLayerGroup" transform="translate(1.000000, 1.000000)">
+                <path d="M34.682,17.7313918 L19.682,31.7313918 C19.49,31.9113918 19.244,32.0003918 19,32.0003918 C18.744,32.0003918 18.488,31.9023918 18.293,31.7073918 L13.293,26.7073918 C12.902,26.3163918 12.902,25.6833918 13.293,25.2933918 C13.683,24.9023918 14.316,24.9023918 14.707,25.2933918 L19.024,29.6093918 L33.318,16.2683918 C33.721,15.8933918 34.354,15.9143918 34.731,16.3173918 C35.108,16.7213918 35.086,17.3543918 34.682,17.7313918 M24,0.000391836736 C10.766,0.000391836736 0,10.7663918 0,24.0003918 C0,37.2333918 10.766,48.0003918 24,48.0003918 C37.233,48.0003918 48,37.2333918 48,24.0003918 C48,10.7663918 37.233,0.000391836736 24,0.000391836736" id="Fill-2232" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

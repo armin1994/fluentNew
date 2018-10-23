@@ -1,0 +1,6 @@
+{
+  "docs": {
+    "Using Fluentai Frontend": ["getting-started", "directory", "configuration"],
+    "Application": ["store", "containers", "components", "dataloader", "middlewares", "models", "rematch", "routes", "rpc", "socket", "locale"]
+  }
+}

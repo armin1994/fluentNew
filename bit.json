@@ -1,0 +1,8 @@
+{
+    "env": {},
+    "dependencies": {
+        "fluentadmin.frontend/components/authentication-card": "1.0.0"
+    },
+    "componentsDefaultDirectory": "src/components/{namespace}/{name}",
+    "packageManager": "npm"
+}

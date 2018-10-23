@@ -1,0 +1,52 @@
+{
+  "home": "http://localhost:8801",
+  "env": {
+    "dev": ["development", "docker"],
+    "prod": ["production", "staging"]
+  },
+  "hmr": {
+    "port": "8802",
+    "host": "0.0.0.0"
+  },
+  "server": {
+    "host": "localhost",
+    "port": "8801",
+    "mode": "development"
+  },
+  "socketServer": "ws://localhost:8101",
+  "moleculer": {
+    "transporter": "nats://localhost:4222",
+    "serializer": "Notepack",
+    "logger": false,
+    "cacher": {
+      "type": "Redis",
+      "options": {
+        "prefix": "MOL",
+        "ttl": 30,
+        "monitor": false,
+        "redis": {
+          "host": "localhost",
+          "port": 6379,
+          "password": "",
+          "db": 0
+        }
+      }
+    },
+    "circuitBreaker": {
+      "enabled": "true"
+    },
+    "retryPolicy": {
+      "enabled": true,
+      "retries": 5,
+      "delay": 100,
+      "maxDelay": 2000,
+      "factor": 2
+    }
+  },
+  "redis": {
+    "host": "localhost",
+    "port": "6379",
+    "pass": "",
+    "secret": "y1gUHXXyU3Z96JjWuQcL8PatJmMBD7vNMJBsGhGTRtNft3cgR7"
+  }
+}
