@@ -1,3 +1,1 @@
-
-
-export signIn from "./signIn/signIn";
+export {default as signIn} from "./signIn/signIn";

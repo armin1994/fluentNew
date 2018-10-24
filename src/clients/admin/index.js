@@ -12,7 +12,7 @@ import models from "./models";
 /**
  * Import main .less file
  */
-import "./themes/index.less";
+import "../../themes/index.less";
 
 const RootElement = document.getElementById("root");
 const lang = Cookie.get("lang") || "en_US";

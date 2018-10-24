@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {Component} from "react";
 import {connect} from "react-redux";
-
+import AuthenticationCard from "../../../../components/authentication-card";
 import {Menu, Icon} from 'antd';
 
 
@@ -57,7 +57,7 @@ class SignIn extends Component {
                     </div>
                 ) : (null)}
                 {/*{!twoFactorSecurity ? (*/}
-                    {/*<Authentication {...this.props}/>*/}
+                    <Authentication {...this.props}/>
                 {/*) : (*/}
                     {/*<TwoFactorSecurity/>*/}
                 {/*)}*/}

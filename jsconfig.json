@@ -8,7 +8,7 @@
       "paths": {
         "ff-shared/*": ["shared/*"],
         "ff-utils/*": ["utils/*"],
-        "ff-client/*": ["client/*"],
+        "ff-clients/*": ["clients/*"],
         "ff-server/*": ["server/*"]
       }
     },

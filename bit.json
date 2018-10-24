@@ -1,8 +1,8 @@
 {
-    "env": {},
-    "dependencies": {
-        "fluentadmin.frontend/components/authentication-card": "1.0.0"
+    "env": {
+        "compiler": "bit.envs/compilers/react@0.0.14"
     },
+    "dependencies": {},
     "componentsDefaultDirectory": "src/components/{namespace}/{name}",
     "packageManager": "npm"
 }

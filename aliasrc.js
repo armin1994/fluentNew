@@ -8,7 +8,7 @@ module.exports = {
     "~themes": resolve("src/themes"),
     src: resolve("src"),
     "ff-shared": resolve("src/shared"),
-    "ff-client": resolve("src/client"),
+    "ff-clients": resolve("src/clients"),
     "ff-server": resolve("src/server"),
     "ff-utils": resolve("src/utils")
 };
