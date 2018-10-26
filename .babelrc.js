@@ -9,7 +9,13 @@ const plugins = [
     ],
     "dynamic-import-node",
     "@babel/syntax-dynamic-import",
-    "react-hot-loader/babel"
+    "react-hot-loader/babel",
+    ["module-resolver", {
+        "root": ["./src"],
+        "alias": {
+            "fluent-components": "./src/components",
+        }
+    }]
 ];
 const presets = ["@babel/env", "@babel/react"];
 if (process.env["BABEL_ENV"] === "client") {

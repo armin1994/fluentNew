@@ -14,11 +14,6 @@
                 "name": "index.js"
             },
             {
-                "relativePath": "src/components/authentication-card/postcss.config.js",
-                "test": false,
-                "name": "postcss.config.js"
-            },
-            {
                 "relativePath": "src/components/authentication-card/style.less",
                 "test": false,
                 "name": "style.less"

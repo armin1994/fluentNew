@@ -1,8 +1,8 @@
 import React, {PureComponent} from 'react';
-import {Row, Col, Spin, Icon, Form, Input, Button, Checkbox} from 'antd';
-import './style.less';
+import {Row, Col} from 'antd';
+import {Link} from 'react-router-dom';
+// import "./style.less";
 
-const FormItem = Form.Item;
 
 /**
  * @render
@@ -47,7 +47,7 @@ class AuthenticationCard extends PureComponent {
             <Row type="flex" justify="center" align="bottom">
               <Col span={24}>
                 <div className="authentication-card-footer">
-                  <p>New User? Create Account</p>
+                  <p>New User? <Link to="/signup">Create Account</Link></p>
                 </div>
               </Col>
             </Row>

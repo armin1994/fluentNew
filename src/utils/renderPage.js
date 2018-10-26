@@ -22,21 +22,21 @@ process.on("unhandledRejection", (reason, p) => {
 export const renderAdmin = (req, res) => {
     const {user} = req;
     let initialState = {
-        session: {isLoggedIn: false}
+        // session: {isLoggedIn: false}
     };
     if (user) {
         const {firstName, lastName, userType, can = ""} = user;
-        initialState = {
-            session: {
-                isLoggedIn: true,
-                user: {
-                    firstname: firstName,
-                    lastname: lastName,
-                    userType: userType,
-                    can: can
-                }
-            }
-        };
+        // initialState = {
+        //     session: {
+        //         isLoggedIn: true,
+        //         user: {
+        //             firstname: firstName,
+        //             lastname: lastName,
+        //             userType: userType,
+        //             can: can
+        //         }
+        //     }
+        // };
     }
     const cookies = new Cookies(req, res);
     const language = cookies.get("lang") || "en_US";
@@ -47,16 +47,15 @@ export const renderAdmin = (req, res) => {
     cookies.set("lang", lang, {httpOnly: false, overwrite: true});
     cookies.set("type", "admin", {httpOnly: false, overwrite: true});
 
-    _.extend(initialState.session, {
-        home: req.headers.host
-    });
+    // _.extend(initialState.session, {
+    //     home: req.headers.host
+    // });
 
     const context = {
         i18nState: {
             lang: lang,
             translations: translations[lang]
         },
-        handleNavOpenKeys: {navOpenKeys: navOpenKeys},
         ...initialState
     };
 

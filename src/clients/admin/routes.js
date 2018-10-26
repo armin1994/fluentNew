@@ -1,14 +1,14 @@
-import {signIn} from "./containers"
+import {signIn, signUp} from "./containers"
 
 const routes = [
     {
         component: signIn,
         path: '/signin'
     },
-    // {
-    //     component: loadComponent("signUp"),
-    //     path: '/signup'
-    // },
+    {
+        component: signUp,
+        path: '/signup'
+    },
     // {
     //     component: loadComponent("noMatch"),
     //     path: "*"

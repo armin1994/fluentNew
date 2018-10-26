@@ -58,6 +58,7 @@
     "antd": "^3.8.0",
     "autoprefixer": "^9.0.2",
     "axios": "^0.18.0",
+    "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-react-app": "^5.0.4",
     "body-parser": "^1.18.3",
     "boom": "^7.2.0",
@@ -125,5 +126,8 @@
     "uuid": "^3.3.2",
     "winston": "^3.1.0",
     "winston-logsene": "^1.2.5"
-  }
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
 }
