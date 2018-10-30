@@ -69072,7 +69072,347 @@ exports.default = _default2;
 })();
 
 ;
-},{"antd/lib/menu/style":"node_modules/antd/lib/menu/style/index.js","antd/lib/menu":"node_modules/antd/lib/menu/index.js","antd/lib/row/style":"node_modules/antd/lib/row/style/index.js","antd/lib/row":"node_modules/antd/lib/row/index.js","antd/lib/button/style":"node_modules/antd/lib/button/style/index.js","antd/lib/button":"node_modules/antd/lib/button/index.js","antd/lib/input/style":"node_modules/antd/lib/input/style/index.js","antd/lib/input":"node_modules/antd/lib/input/index.js","antd/lib/icon/style":"node_modules/antd/lib/icon/style/index.js","antd/lib/icon":"node_modules/antd/lib/icon/index.js","@babel/runtime/helpers/defineProperty":"node_modules/@babel/runtime/helpers/defineProperty.js","antd/lib/form/style":"node_modules/antd/lib/form/style/index.js","antd/lib/form":"node_modules/antd/lib/form/index.js","react-hot-loader":"node_modules/react-hot-loader/index.js","react":"node_modules/react/index.js","prop-types":"node_modules/prop-types/index.js","react-redux":"node_modules/react-redux/es/index.js","../../../../components":"src/components/index.js","react-router-dom":"node_modules/react-router-dom/es/index.js"}],"src/clients/admin/containers/index.js":[function(require,module,exports) {
+},{"antd/lib/menu/style":"node_modules/antd/lib/menu/style/index.js","antd/lib/menu":"node_modules/antd/lib/menu/index.js","antd/lib/row/style":"node_modules/antd/lib/row/style/index.js","antd/lib/row":"node_modules/antd/lib/row/index.js","antd/lib/button/style":"node_modules/antd/lib/button/style/index.js","antd/lib/button":"node_modules/antd/lib/button/index.js","antd/lib/input/style":"node_modules/antd/lib/input/style/index.js","antd/lib/input":"node_modules/antd/lib/input/index.js","antd/lib/icon/style":"node_modules/antd/lib/icon/style/index.js","antd/lib/icon":"node_modules/antd/lib/icon/index.js","@babel/runtime/helpers/defineProperty":"node_modules/@babel/runtime/helpers/defineProperty.js","antd/lib/form/style":"node_modules/antd/lib/form/style/index.js","antd/lib/form":"node_modules/antd/lib/form/index.js","react-hot-loader":"node_modules/react-hot-loader/index.js","react":"node_modules/react/index.js","prop-types":"node_modules/prop-types/index.js","react-redux":"node_modules/react-redux/es/index.js","../../../../components":"src/components/index.js","react-router-dom":"node_modules/react-router-dom/es/index.js"}],"node_modules/@babel/runtime/helpers/extends.js":[function(require,module,exports) {
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends;
+},{}],"src/clients/admin/containers/home/components/inputTest/inputRequired.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+require("antd/lib/input/style");
+
+var _input = _interopRequireDefault(require("antd/lib/input"));
+
+require("antd/lib/icon/style");
+
+var _icon = _interopRequireDefault(require("antd/lib/icon"));
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
+require("antd/lib/form/style");
+
+var _form = _interopRequireDefault(require("antd/lib/form"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  var enterModule = require('react-hot-loader').enterModule;
+
+  enterModule && enterModule(module);
+})();
+
+const FormItem = _form.default.Item;
+
+class InputRequired extends _react.PureComponent {
+  constructor(props) {
+    super(props);
+    (0, _defineProperty2.default)(this, "state", {
+      isPasswordShown: false,
+      rules: this.props.rules
+    });
+    (0, _defineProperty2.default)(this, "togglePassword", () => {
+      this.setState({
+        isPasswordShown: !this.state.isPasswordShown
+      });
+    });
+  }
+
+  componentWillMount() {
+    console.log(this.props);
+
+    if (this.props.required) {
+      this.state.rules.push({
+        required: true,
+        message: _react.default.createElement("b", null, " ", _react.default.createElement(_icon.default, {
+          type: "close-circle",
+          theme: "filled"
+        }), " This field is required")
+      });
+    }
+  }
+
+  render() {
+    const {
+      form,
+      type,
+      name,
+      label,
+      placeholder,
+      formItemProps
+    } = this.props;
+    const {
+      rules
+    } = this.state;
+    const {
+      getFieldDecorator
+    } = form;
+    let suffix, passwordType;
+
+    if (type === 'password') {
+      if (this.state.isPasswordShown) {
+        suffix = _react.default.createElement(_icon.default, {
+          type: "eye",
+          theme: "filled",
+          onClick: this.togglePassword,
+          style: {
+            color: '#28b0ff'
+          }
+        });
+        passwordType = 'text';
+      } else {
+        suffix = _react.default.createElement(_icon.default, {
+          type: "eye",
+          theme: "filled",
+          onClick: this.togglePassword
+        });
+        passwordType = 'password';
+      }
+    }
+
+    return type === 'text' ? _react.default.createElement(FormItem, (0, _extends2.default)({
+      label: label,
+      hasFeedback: true
+    }, formItemProps), getFieldDecorator(name, {
+      rules: rules
+    })(_react.default.createElement(_input.default, {
+      placeholder: placeholder
+    }))) : _react.default.createElement(FormItem, {
+      label: label
+    }, getFieldDecorator(name, {
+      rules: rules
+    })(_react.default.createElement(_input.default, {
+      placeholder: placeholder,
+      type: passwordType,
+      suffix: suffix
+    })));
+  }
+
+  // @ts-ignore
+  __reactstandin__regenerateByEval(key, code) {
+    // @ts-ignore
+    this[key] = eval(code);
+  }
+
+}
+
+(0, _defineProperty2.default)(InputRequired, "defaultProps", {
+  type: 'text',
+  formItemProps: null,
+  required: false,
+  rules: []
+});
+const _default = InputRequired;
+var _default2 = _default;
+exports.default = _default2;
+;
+
+(function () {
+  var reactHotLoader = require('react-hot-loader').default;
+
+  var leaveModule = require('react-hot-loader').leaveModule;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(FormItem, "FormItem", "/home/ayoub/Documents/newStructure/new-frontend/src/clients/admin/containers/home/components/inputTest/inputRequired.js");
+  reactHotLoader.register(InputRequired, "InputRequired", "/home/ayoub/Documents/newStructure/new-frontend/src/clients/admin/containers/home/components/inputTest/inputRequired.js");
+  reactHotLoader.register(_default, "default", "/home/ayoub/Documents/newStructure/new-frontend/src/clients/admin/containers/home/components/inputTest/inputRequired.js");
+  leaveModule(module);
+})();
+
+;
+},{"@babel/runtime/helpers/extends":"node_modules/@babel/runtime/helpers/extends.js","antd/lib/input/style":"node_modules/antd/lib/input/style/index.js","antd/lib/input":"node_modules/antd/lib/input/index.js","antd/lib/icon/style":"node_modules/antd/lib/icon/style/index.js","antd/lib/icon":"node_modules/antd/lib/icon/index.js","@babel/runtime/helpers/defineProperty":"node_modules/@babel/runtime/helpers/defineProperty.js","antd/lib/form/style":"node_modules/antd/lib/form/style/index.js","antd/lib/form":"node_modules/antd/lib/form/index.js","react-hot-loader":"node_modules/react-hot-loader/index.js","react":"node_modules/react/index.js"}],"src/clients/admin/containers/home/home.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+require("antd/lib/button/style");
+
+var _button = _interopRequireDefault(require("antd/lib/button"));
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
+require("antd/lib/form/style");
+
+var _form = _interopRequireDefault(require("antd/lib/form"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _reactRedux = require("react-redux");
+
+var _inputRequired = _interopRequireDefault(require("./components/inputTest/inputRequired"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function () {
+  var enterModule = require('react-hot-loader').enterModule;
+
+  enterModule && enterModule(module);
+})();
+
+const FormItem = _form.default.Item;
+
+class Home extends _react.Component {
+  constructor(props) {
+    super(props);
+    (0, _defineProperty2.default)(this, "handleSubmit", e => {
+      e.preventDefault();
+      this.props.form.validateFields((err, values) => {
+        console.log(err, values);
+
+        if (!err) {
+          console.log('Received values of form: ', values);
+        }
+      });
+    });
+  }
+
+  render() {
+    // const formItemLayout = {
+    //     labelCol: {
+    //         xs: { span: 24 },
+    //         sm: { span: 5 },
+    //     },
+    //     wrapperCol: {
+    //         xs: { span: 24 },
+    //         sm: { span: 12 },
+    //     },
+    // };
+    const usernameProps = {
+      name: 'username',
+      label: 'Username',
+      placeholder: 'insert your username',
+      type: 'text',
+      required: true,
+      // rules: [
+      //     {
+      //         min: 4,
+      //         message: 'input must be at least 4 characters'
+      //     }
+      // ],
+      ...this.props
+    };
+    const passwordProps = {
+      name: 'password',
+      label: 'Password',
+      placeholder: 'insert your password',
+      type: 'password',
+      required: true,
+      rules: [{
+        min: 4,
+        message: 'input must be at least 4 characters'
+      }],
+      ...this.props
+    };
+    return _react.default.createElement("div", {
+      className: "my-container"
+    }, _react.default.createElement(_form.default, {
+      onSubmit: this.handleSubmit,
+      className: "login-form"
+    }, _react.default.createElement(_inputRequired.default, usernameProps), _react.default.createElement(_inputRequired.default, passwordProps), _react.default.createElement(FormItem, null, _react.default.createElement(_button.default, {
+      type: "primary",
+      htmlType: "submit",
+      className: "login-form-button"
+    }, "Log in"))));
+  }
+
+  // @ts-ignore
+  __reactstandin__regenerateByEval(key, code) {
+    // @ts-ignore
+    this[key] = eval(code);
+  }
+
+}
+
+Home.contextTypes = {
+  t: _propTypes.default.func.isRequired
+};
+
+const mapStateToProps = state => {
+  return {};
+};
+
+const mapDispatchToProps = dispatch => ({});
+
+const WrappedLoginForm = _form.default.create()(Home);
+
+const _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(WrappedLoginForm);
+
+var _default2 = _default;
+exports.default = _default2;
+;
+
+(function () {
+  var reactHotLoader = require('react-hot-loader').default;
+
+  var leaveModule = require('react-hot-loader').leaveModule;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(FormItem, "FormItem", "/home/ayoub/Documents/newStructure/new-frontend/src/clients/admin/containers/home/home.js");
+  reactHotLoader.register(Home, "Home", "/home/ayoub/Documents/newStructure/new-frontend/src/clients/admin/containers/home/home.js");
+  reactHotLoader.register(mapStateToProps, "mapStateToProps", "/home/ayoub/Documents/newStructure/new-frontend/src/clients/admin/containers/home/home.js");
+  reactHotLoader.register(mapDispatchToProps, "mapDispatchToProps", "/home/ayoub/Documents/newStructure/new-frontend/src/clients/admin/containers/home/home.js");
+  reactHotLoader.register(WrappedLoginForm, "WrappedLoginForm", "/home/ayoub/Documents/newStructure/new-frontend/src/clients/admin/containers/home/home.js");
+  reactHotLoader.register(_default, "default", "/home/ayoub/Documents/newStructure/new-frontend/src/clients/admin/containers/home/home.js");
+  leaveModule(module);
+})();
+
+;
+},{"antd/lib/button/style":"node_modules/antd/lib/button/style/index.js","antd/lib/button":"node_modules/antd/lib/button/index.js","@babel/runtime/helpers/defineProperty":"node_modules/@babel/runtime/helpers/defineProperty.js","antd/lib/form/style":"node_modules/antd/lib/form/style/index.js","antd/lib/form":"node_modules/antd/lib/form/index.js","react-hot-loader":"node_modules/react-hot-loader/index.js","react":"node_modules/react/index.js","prop-types":"node_modules/prop-types/index.js","react-redux":"node_modules/react-redux/es/index.js","./components/inputTest/inputRequired":"src/clients/admin/containers/home/components/inputTest/inputRequired.js"}],"src/clients/admin/containers/home/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "HomeContainer", {
+  enumerable: true,
+  get: function () {
+    return _home.default;
+  }
+});
+
+var _home = _interopRequireDefault(require("./home"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./home":"src/clients/admin/containers/home/home.js"}],"src/clients/admin/containers/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -69090,13 +69430,21 @@ Object.defineProperty(exports, "signUp", {
     return _signUp.default;
   }
 });
+Object.defineProperty(exports, "HomeContainer", {
+  enumerable: true,
+  get: function () {
+    return _home.HomeContainer;
+  }
+});
 
 var _signIn = _interopRequireDefault(require("./signIn/signIn"));
 
 var _signUp = _interopRequireDefault(require("./signUp/signUp"));
 
+var _home = require("./home");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./signIn/signIn":"src/clients/admin/containers/signIn/signIn.js","./signUp/signUp":"src/clients/admin/containers/signUp/signUp.js"}],"src/clients/admin/routes.js":[function(require,module,exports) {
+},{"./signIn/signIn":"src/clients/admin/containers/signIn/signIn.js","./signUp/signUp":"src/clients/admin/containers/signUp/signUp.js","./home":"src/clients/admin/containers/home/index.js"}],"src/clients/admin/routes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -69118,6 +69466,9 @@ const routes = [{
 }, {
   component: _containers.signUp,
   path: '/signup'
+}, {
+  component: _containers.HomeContainer,
+  path: "/home"
 }];
 const _default = routes;
 var _default2 = _default;
@@ -77835,7 +78186,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32947" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36815" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

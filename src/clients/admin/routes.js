@@ -1,4 +1,4 @@
-import {signIn, signUp} from "./containers"
+import {signIn, signUp, HomeContainer} from "./containers"
 
 const routes = [
     {
@@ -9,10 +9,10 @@ const routes = [
         component: signUp,
         path: '/signup'
     },
-    // {
-    //     component: loadComponent("noMatch"),
-    //     path: "*"
-    // }
+    {
+        component: HomeContainer,
+        path: "/home"
+    }
 ];
 
 export default routes;
